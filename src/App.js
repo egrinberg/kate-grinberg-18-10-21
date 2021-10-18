@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, { useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
+
+import { createTheme, ThemeProvider } from '@material-ui/core/styles'
+import WeatherPage from './pages/WeatherPage'
+import FavoritePage from './pages/FavoritePage'
+import HeaderComponent from './components/HeaderComponent';
 
 function App() {
+
+  const mainTheme = createTheme({
+    typography: {
+      
+      fontFamily: [
+        ` 'Roboto',
+          sans-serif
+          `
+      ].join(','),
+      
+    },
+    overrides: {
+      
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={mainTheme}> 
+        <HeaderComponent />     
+        <div>
+          <Switch>
+            <Route path='/home' component={WeatherPage} />
+            <Route path='/favorite' component={FavoritePage} />            
+          </Switch>
+        </div>
+      
+    </ThemeProvider>
   );
 }
 
