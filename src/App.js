@@ -28,7 +28,9 @@ function App() {
   return (
     <ThemeProvider theme={mainTheme}> 
         <HeaderComponent />     
-        <div>
+        <div style={{ 
+        height: '100vh',
+        backgroundColor: '#F6F6F6' }}>
           <Switch>
             <Route path='/home' component={WeatherPage} />
             <Route path='/favorite' component={FavoritePage} />            
