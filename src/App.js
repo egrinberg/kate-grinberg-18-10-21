@@ -32,8 +32,8 @@ function App() {
         height: '100vh',
         backgroundColor: '#F6F6F6' }}>
           <Switch>
-            <Route path='/home' component={WeatherPage} />
-            <Route path='/favorite' component={FavoritePage} />            
+            <Route exact path='/' component={WeatherPage} />
+            <Route exact path='/favorite' component={FavoritePage} />            
           </Switch>
         </div>
       

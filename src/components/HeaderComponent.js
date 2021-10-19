@@ -28,7 +28,7 @@ function HeaderComponent() {
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container justifyContent='flex-end'>
-                        <Button className={classes.logoutButton} onClick={() => history.push('/home')}>
+                        <Button className={classes.logoutButton} onClick={() => history.push('/')}>
                             Home                           
                         </Button>  
                         <Button className={classes.logoutButton} onClick={() => history.push('/favorite')}>
