@@ -15,7 +15,8 @@ export const weatherSlice = createSlice({
             forecast: null            
         },
         favorites: [],
-        locations: []
+        locations: [],
+        theme: 'dark'
     },
     reducers: {
         setLocations: (state, action) => {
@@ -45,6 +46,9 @@ export const weatherSlice = createSlice({
         removeFromFavorite: (state, action) => {            
             const newFavorites = state.favorites.filter((fav) => fav.id !== action.payload.locationKey)
             state.favorites = newFavorites
+        },
+        setTheme: (state,action) => {
+            state.theme = action.payload
         }
 
 
@@ -148,7 +152,8 @@ export const {
     setCurrentLocationWeather,
     setWeatherForecast,
     addToFavorite,
-    removeFromFavorite
+    removeFromFavorite,
+    setTheme
 } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

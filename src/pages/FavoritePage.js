@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from 'react'
-import { Grid, TextField,Typography, Button } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Grid, Typography,  Paper } from '@material-ui/core'
+
 import { useHistory } from 'react-router-dom';
 
+import {  withStyles, makeStyles } from '@material-ui/core/styles'
 
 
 //redux
@@ -25,18 +26,20 @@ function FavoritePage() {
     return (
         <Grid container style={{ padding: 60 }} justifyContent='space-around' space={2}>
             {favorites && favorites.map(favorite => (
-                <Grid item xs={12} sm={8} md={2}   style={{padding: 5,margin: 5, border: '1px solid black'}} onClick={(e) => getMoreDetails(favorite)}>
+                <Grid item xs={12} sm={8} md={2}  style={{margin: 5, cursor: 'pointer'}} onClick={(e) => getMoreDetails(favorite)}>
+                    <Paper elevation={3}  className={classes.itemWeather}>
                     <Grid container justifyContent='center'>
                         <Grid item xs={12}>
-                            <Typography className={classes.center}>{favorite.name}</Typography>
+                            <Typography variant='subtitle1' className={classes.center}>{favorite.name}</Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography className={classes.center}>{favorite.currentWeather[0].Temperature.Metric.Value} {favorite.currentWeather[0].Temperature.Metric.Unit}</Typography>
+                            <Typography className={classes.center} variant='subtitle2'>{favorite.currentWeather[0].Temperature.Metric.Value} {favorite.currentWeather[0].Temperature.Metric.Unit}</Typography>
                         </Grid>
                         <Grid item container xs={12} justifyContent='center'>
-                            <Typography className={classes.center}>{favorite.currentWeather[0].WeatherText}</Typography>
+                            <Typography className={classes.center} variant='subtitle2' >{favorite.currentWeather[0].WeatherText}</Typography>
                         </Grid>
                      </Grid>
+                     </Paper>
                 </Grid>
             ))}
         </Grid>
@@ -61,7 +64,11 @@ const useStyles = makeStyles((theme) => ({
     },
     capitalize: {
         textTransform: 'capitalize'
-    }
+    },
+    itemWeather: {
+        backgroundColor: theme.palette.background.paper,
+        padding:5
+    },
 
     
 }))

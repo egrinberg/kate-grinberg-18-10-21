@@ -7,17 +7,53 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 import WeatherPage from './pages/WeatherPage'
 import FavoritePage from './pages/FavoritePage'
 import HeaderComponent from './components/HeaderComponent';
+import { lightThemeColors, darkThemeColors } from './constants';
+import {  useSelector } from 'react-redux';
 
 function App() {
 
-  const mainTheme = createTheme({
-    typography: {
+  const theme = useSelector(state => state.weather.theme)
+
+  const darkTheme = createTheme({
+    palette: darkThemeColors,
+    typography: {      
+      fontFamily: ['Urbanist', 'Quicksand', 'sans-serif'].join(','),      
+      h1: {
+        fontSize: 20,
+        color: '#6C7678'
+      },
+      subtitle1: {
+        fontSize: 16,
+        fontWeight: 500,
+        color: '#6C7678'
+      },
+      subtitle2: {
+        fontSize: 16,
+        color: '#FFFFFF'
+      }
       
-      fontFamily: [
-        ` 'Roboto',
-          sans-serif
-          `
-      ].join(','),
+    },
+    overrides: {
+      
+    }
+  })
+
+  const lightTheme = createTheme({
+    palette: lightThemeColors,
+    typography: {      
+      fontFamily: ['Urbanist', 'Quicksand', 'sans-serif'].join(','),     
+      h1: {
+        fontSize: 20,
+        color: '#6C7678'
+      },
+      subtitle1: {
+        fontSize: 16,
+        fontWeight: 500,
+        color: '#A6B7B8'
+      },
+      subtitle2: {
+        fontSize: 16
+      }
       
     },
     overrides: {
@@ -26,11 +62,10 @@ function App() {
   })
 
   return (
-    <ThemeProvider theme={mainTheme}> 
+    <ThemeProvider theme={darkTheme}> 
         <HeaderComponent />     
-        <div style={{ 
-        height: '100vh',
-        backgroundColor: '#F6F6F6' }}>
+        <div style={{ minHeight: '100vh',    
+        backgroundColor: theme === 'dark' ? '#1A1A1A'  : '#F6F6F6' }}>
           <Switch>
             <Route exact path='/' component={WeatherPage} />
             <Route exact path='/favorite' component={FavoritePage} />            
