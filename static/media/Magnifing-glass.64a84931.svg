@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 13.295 13.295">
+  <defs>
+    <style>
+      .test {
+        fill: #0396E6;
+      }
+    </style>
+  </defs>
+  <path class="test"
+    d="M15.181,14.5l-3.116-3.116a5.708,5.708,0,1,0-.671.671l3.116,3.116a.476.476,0,0,0,.671-.671ZM2.951,7.7a4.757,4.757,0,1,1,4.758,4.76A4.757,4.757,0,0,1,2.951,7.7Z"
+    transform="translate(-1.999 -1.989)" transform="scale(0.8)" />
+</svg>
