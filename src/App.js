@@ -71,9 +71,9 @@ function App() {
         backgroundColor: theme === 'dark' ? '#1A1A1A' : '#F6F6F6'
       }}>
         <SnackBar />
-        <Switch>
-          <Route exact path='/' component={WeatherPage} />
+        <Switch>          
           <Route exact path='/favorite' component={FavoritePage} />
+          <Route path='/' component={WeatherPage} />
         </Switch>
       </div>
 
