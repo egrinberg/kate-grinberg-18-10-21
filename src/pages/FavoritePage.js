@@ -24,9 +24,9 @@ function FavoritePage() {
     }
 
     return (
-        <Grid container style={{ padding: 60 }} justifyContent='space-around' space={2}>
+        <Grid container style={{ padding: 60 }} justifyContent='flex-start' space={2}>
             {favorites && favorites.map(favorite => (
-                <Grid item xs={12} sm={8} md={2}  style={{margin: 5, cursor: 'pointer'}} onClick={(e) => getMoreDetails(favorite)}>
+                <Grid item xs={12} sm={2} md={2}  style={{margin: 5, cursor: 'pointer'}} onClick={(e) => getMoreDetails(favorite)}>
                     <Paper elevation={3}  className={classes.itemWeather}>
                     <Grid container justifyContent='center'>
                         <Grid item xs={12}>
