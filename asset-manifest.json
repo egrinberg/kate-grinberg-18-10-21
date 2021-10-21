@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kate-grinberg-18-10-21/static/css/main.a617e044.chunk.css",
-    "main.js": "/kate-grinberg-18-10-21/static/js/main.980b2b01.chunk.js",
-    "main.js.map": "/kate-grinberg-18-10-21/static/js/main.980b2b01.chunk.js.map",
+    "main.js": "/kate-grinberg-18-10-21/static/js/main.6a18ee43.chunk.js",
+    "main.js.map": "/kate-grinberg-18-10-21/static/js/main.6a18ee43.chunk.js.map",
     "runtime-main.js": "/kate-grinberg-18-10-21/static/js/runtime-main.e1dd4363.js",
     "runtime-main.js.map": "/kate-grinberg-18-10-21/static/js/runtime-main.e1dd4363.js.map",
     "static/js/2.b5973e0c.chunk.js": "/kate-grinberg-18-10-21/static/js/2.b5973e0c.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.e1dd4363.js",
     "static/js/2.b5973e0c.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.980b2b01.chunk.js"
+    "static/js/main.6a18ee43.chunk.js"
   ]
 }
